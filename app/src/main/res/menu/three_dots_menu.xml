@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/tdm_reload"
+        android:title="@string/tdm_reload"
+        app:showAsAction="never" />
+    <item android:id="@+id/tdm_add_contact"
+        android:title="@string/tdm_add_contact"
+        app:showAsAction="never" />
+</menu>
