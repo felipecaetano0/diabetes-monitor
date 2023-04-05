@@ -1,32 +1,58 @@
 <resources>
-    <string name="app_name">Diabetes</string>
-    <string name="tab_text_1">Medida</string>
-    <string name="tab_text_2">Histórico</string>
-    <string name="tab_text_3">Gráfico</string>
-<!--    Fragment Medidas-->
-    <string name="med_data">Data</string>
-    <string name="med_hora">Hora</string>
-    <string name="med_leitura">Glicemia (mg/dL)</string>
-    <string name="med_humor">Como você se sente?</string>
-    <string name="med_humor_rating1">Péssimo(a)</string>
-    <string name="med_humor_rating2">Mal</string>
-    <string name="med_humor_rating3">Normal</string>
-    <string name="med_humor_rating4">Bem</string>
-    <string name="med_humor_rating5">Excelente</string>
-    <string name="med_save_success">Medida salva com sucesso</string>
-    <string name="med_save_fail_db">Houve uma falha com o banco de dados ao salvar sua medida, tente novamente</string>
-    <string name="med_save_fail_history">Houve uma falha com o histórico ao salvar sua medida \nRecarregue a interface</string>
-    <string name="med_save_fail_graph">Houve uma falha com o gráfico ao salvar sua medida \nRecarregue a interface</string>
-    <string name="med_invalid_value">Entre com um valor de medida</string>
-    <string name="med_permission_denied">SMS de alerta não foi enviado. Dê ao aplicativo esta permissão</string>
-<!--    Three dots menu (tdm)-->
-    <string name="tdm_reload">Recarregar interface</string>
-    <string name="tdm_reloading">Interface recarregada</string>
-    <string name="tdm_reloading_fail">Falha ao recarregar, tente novamente</string>
-    <string name="tdm_add_contact">Adc. contato de emergência</string>
-    <string name="tdm_add_contact_success">Contato de emergência salvo com sucesso</string>
-    <string name="tdm_add_contact_fail">Não foi possível armazenar o contato de emergência!\nPor favor, tente novamente </string>
-    <string name="tdm_null_input">Entre com todos os valores pedidos </string>
-<!--    SMS message        -->
-     <string name="sms_message">Você está cadastrado como contato de emergência de uma pessoa que possui diabetes\n </string>
+    <string name="app_name">Diabetes Monitor</string>
+    <string name="tab_measure">Measure</string>
+    <string name="tab_history">History</string>
+    <string name="tab_graph">Graph</string>
+
+    <!--    Measure Fragment (main) -->
+    <string name="measure_date">Date</string>
+    <string name="measure_time">Time</string>
+    <string name="measure_value">Glycemia Value (mg/dL)</string>
+    <string name="measure_mood">How are you feeling?</string>
+    <string name="measure_mood_rating1">Awful</string>
+    <string name="measure_mood_rating2">Bad</string>
+    <string name="measure_mood_rating3">Normal</string>
+    <string name="measure_mood_rating4">Good</string>
+    <string name="measure_mood_rating5">Excellent</string>
+    <string name="measure_save_success">Measure successfully saved</string>
+    <string name="measure_save_fail_db">There was a failure with the Data Base while saving, please try again</string>
+    <string name="measure_save_fail_history">There was a failure while loading the history,\n please reload the interface</string>
+    <string name="measure_save_fail_graph">There was a failure while loading the graph,\n please reload the interface</string>
+    <string name="measure_invalid_value">Please enter with a measure value</string>
+    <string name="measure_permission_denied">Alert SMS not sent, please give the app this permission</string>
+
+    <!--    History Fragment -->
+    <string name="history_measure">Measure: </string>
+    <string name="history_date"> - Date: </string>
+    <string name="history_time"> - Time: </string>
+    <string name="history_humor"> - Mood: </string>
+
+    <!--    Graph Fragment     -->
+    <string name="graph_filter">Filters</string>
+    <string name="graph_measure_since">Show measures since:</string>
+    <string name="graph_highligh_measures_above">Highlight measures above:</string>
+    <string name="graph_highligh_measures_below">Highlight measures below:</string>
+
+    <!--    Three dots menu (tdm)-->
+    <string name="tdm_reload">Reload interface (DEBUG)</string>
+    <string name="tdm_reloading">Interface reloaded</string>
+    <string name="tdm_reloading_fail">Reloading error, please try again</string>
+    <string name="tdm_add_contact">Add emergency contact</string>
+    <string name="tdm_add_contact_success">Emergency contact saved successfully</string>
+    <string name="tdm_add_contact_fail">Failed to add a emergency contact, please try again</string>
+    <string name="tdm_null_input">Please enter with the required values</string>
+
+    <!--    SMS message        -->
+    <string name="sms_message_pt1">You are registered as the emergency contact of someone who was diabetes.\n\n
+        The last measured blood glucose measurement was </string>
+    <string name="sms_message_pt2">mg/dL.\n\nThis person may need medical attention, STAY ALERT!</string>
+
+    <!--    Emergency contact dialog -->
+    <string name="contact_dlg_title">Emergency Contact</string>
+    <string name="contact_dlg_phrase1">When your blood glucose is below</string>
+    <string name="contact_dlg_phrase2">or above</string>
+    <string name="contact_dlg_phrase3">a SMS message will be sent</string>
+    <string name="contact_dlg_phrase4">to the following phone:</string>
+    <string name="contact_dlg_bt_register">Register</string>
+    <string name="contact_dlg_bt_cancel">Cancel</string>
 </resources>

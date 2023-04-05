@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Monitor de Diabetes</string>
+    <string name="tab_measure">Medida</string>
+    <string name="tab_history">Histórico</string>
+    <string name="tab_graph">Gráfico</string>
+
+    <!--    Measure Fragment (main) -->
+    <string name="measure_date">Data</string>
+    <string name="measure_time">Hora</string>
+    <string name="measure_value">Glicemia (mg/dL)</string>
+    <string name="measure_mood">Como você se sente?</string>
+    <string name="measure_mood_rating1">Péssimo(a)</string>
+    <string name="measure_mood_rating2">Mal</string>
+    <string name="measure_mood_rating3">Normal</string>
+    <string name="measure_mood_rating4">Bem</string>
+    <string name="measure_mood_rating5">Excelente</string>
+    <string name="measure_save_success">Medida salva com sucesso</string>
+    <string name="measure_save_fail_db">Houve uma falha com o banco de dados ao salvar sua medida, tente novamente</string>
+    <string name="measure_save_fail_history">Houve uma falha com o histórico ao salvar sua medida \nRecarregue a interface</string>
+    <string name="measure_save_fail_graph">Houve uma falha com o gráfico ao salvar sua medida \nRecarregue a interface</string>
+    <string name="measure_invalid_value">Entre com um valor de medida</string>
+    <string name="measure_permission_denied">SMS de alerta não foi enviado. Dê ao aplicativo esta permissão</string>
+
+    <!--    History Fragment -->
+    <string name="history_measure">Medida: </string>
+    <string name="history_date"> - Data: </string>
+    <string name="history_time"> - Hora: </string>
+    <string name="history_humor"> - Humor: </string>
+
+    <!--    Graph Fragment     -->
+    <string name="graph_filter">Filtros</string>
+    <string name="graph_measure_since">Mostrar medidas desde de:</string>
+    <string name="graph_highligh_measures_above">Destacar medidas acima de:</string>
+    <string name="graph_highligh_measures_below">Destacar medidas abaixo de:</string>
+
+    <!--    Three dots menu (tdm)-->
+    <string name="tdm_reload">Recarregar interface (DEBUG)</string>
+    <string name="tdm_reloading">Interface recarregada</string>
+    <string name="tdm_reloading_fail">Falha ao recarregar, tente novamente</string>
+    <string name="tdm_add_contact">Adc. contato de emergência</string>
+    <string name="tdm_add_contact_success">Contato de emergência salvo com sucesso</string>
+    <string name="tdm_add_contact_fail">Não foi possível armazenar o contato de emergência!\nPor favor, tente novamente </string>
+    <string name="tdm_null_input">Entre com todos os valores pedidos </string>
+
+    <!--    SMS message        -->
+    <string name="sms_message_pt1">Você está cadastrado como contato de emergência de uma pessoa que possui diabetes.\n\n
+    Sua última medida de glicemia foi de </string>
+    <string name="sms_message_pt2">mg/dL.\n\nTalvez ela precise de cuidados médicos, MANTENHA-SE ALERTA!</string>
+
+    <!--    Emergency contact dialog -->
+    <string name="contact_dlg_title">Contato de Emergência</string>
+    <string name="contact_dlg_phrase1">Quando sua glicemia estiver abaixo de </string>
+    <string name="contact_dlg_phrase2">ou acima de</string>
+    <string name="contact_dlg_phrase3">será enviada uma mensagem</string>
+    <string name="contact_dlg_phrase4">SMS para o seguinte telefone:</string>
+    <string name="contact_dlg_bt_register">Cadastrar</string>
+    <string name="contact_dlg_bt_cancel">Cancelar</string>
+
+</resources>

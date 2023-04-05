@@ -48,7 +48,7 @@ public class MeasureAdapter implements View.OnKeyListener {
 
     public int getMeasure() {
         if(this.view.getText().toString().equals("")){
-            Snackbar.make(view, R.string.med_invalid_value, Snackbar.LENGTH_LONG)
+            Snackbar.make(view, R.string.measure_invalid_value, Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show();
             return -1;
         }else {

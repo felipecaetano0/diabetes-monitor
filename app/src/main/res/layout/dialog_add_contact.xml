@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="44dp"
-        android:text="Quando sua glicemia estiver abaixo de "
+        android:text="@string/contact_dlg_phrase1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
-        android:text="Contato de Emergência"
+        android:text="@string/contact_dlg_title"
         android:textColor="@color/design_default_color_primary_variant"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="36dp"
-        android:text="ou acima de"
+        android:text="@string/contact_dlg_phrase2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -75,7 +75,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="28dp"
-        android:text="será enviada uma mensagem"
+        android:text="@string/contact_dlg_phrase3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/etHighGlucose"
@@ -87,7 +87,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginTop="36dp"
-        android:text="SMS para o seguinte telefone:"
+        android:text="@string/contact_dlg_phrase4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -109,10 +109,10 @@
 
     <Button
         android:id="@+id/btRegister"
-        android:layout_width="125dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="68dp"
-        android:text="Cadastrar"
+        android:text="@string/contact_dlg_bt_register"
         app:layout_constraintBottom_toBottomOf="@+id/btCancelRegister"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -125,7 +125,7 @@
         android:layout_marginStart="68dp"
         android:layout_marginTop="44dp"
         android:layout_marginBottom="44dp"
-        android:text="Cancelar"
+        android:text="@string/contact_dlg_bt_cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
