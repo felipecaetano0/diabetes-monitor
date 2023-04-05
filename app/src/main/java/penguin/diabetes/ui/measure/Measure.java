@@ -2,6 +2,8 @@ package penguin.diabetes.ui.measure;
 
 import java.util.Date;
 
+import penguin.diabetes.R;
+import penguin.diabetes.activities.MainActivity;
 import penguin.diabetes.ui.time.DatePickerAdapter;
 import penguin.diabetes.ui.time.TimePickerAdapter;
 
@@ -25,10 +27,31 @@ public class Measure {
     }
 
     public String toHumanReadableString(){
-        return "Medida: " + measure +
-                " - Data: " + day + "/" + month + "/" + year +
-                " - Hora: " + hour + ":" + minute +
-                " - Humor: " + humor;       // FIXME/ENHANCE ME: make it show a string for humor
+
+        String str = "";
+        str += MainActivity.getMainContext().getString(R.string.history_measure) + getMeasure() +
+               MainActivity.getMainContext().getString(R.string.history_date)  + getDay() + "/" + getMonth() + "/" + getYear() +
+               MainActivity.getMainContext().getString(R.string.history_time) + getHour() + ":" + getMinute() +
+               MainActivity.getMainContext().getString(R.string.history_humor) + humorNumberToString(getHumor());
+
+        return str;
+    }
+
+    public static String humorNumberToString(int humor){
+        switch (humor){
+            case 1:
+                return MainActivity.getMainContext().getString(R.string.measure_mood_rating1);
+            case 2:
+                return MainActivity.getMainContext().getString(R.string.measure_mood_rating2);
+            case 3:
+                return MainActivity.getMainContext().getString(R.string.measure_mood_rating3);
+            case 4:
+                return MainActivity.getMainContext().getString(R.string.measure_mood_rating4);
+            case 5:
+                return MainActivity.getMainContext().getString(R.string.measure_mood_rating5);
+            default:
+                return null;
+        }
     }
 
     public Date getDate(){
@@ -55,7 +78,7 @@ public class Measure {
         return minute;
     }
 
-    public float getHumor() {
+    public int getHumor() {
         return humor;
     }
 

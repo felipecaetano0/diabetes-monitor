@@ -2,6 +2,7 @@ package penguin.diabetes.activities;
 
 import android.Manifest;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.os.Bundle;
@@ -34,6 +35,7 @@ import penguin.diabetes.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private static Context mainContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,37 +51,20 @@ public class MainActivity extends AppCompatActivity {
         tabs.setupWithViewPager(viewPager);
 
         // -------------------- SMS Permission request ---------------------------
-
+        // TODO: move this request to when you enter the emergency contact phone
         ActivityCompat.requestPermissions(this ,new String[]{Manifest.permission.SEND_SMS},1);
 
         // -------------------- Data Base Initialization ------------------------
 
-        SQLiteDatabase appDatabase = openOrCreateDatabase("app", MODE_PRIVATE,null);
+        SQLiteDatabase appDatabase = openOrCreateDatabase("Diabetes Monitor", MODE_PRIVATE,null);
         DataBaseManager db = new DataBaseManager(appDatabase);
 
+        //--------------------- Setting a static variable to acquire the main Context ------
+        mainContext = this;
+    }
 
-
-//        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                if(tab.getPosition() == 1){
-////                    PlaceholderFragment.HistoryFragment.loadHistoryList();
-//                }
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//                if (tab.getPosition() == 1) {
-////                    PlaceholderFragment.HistoryFragment.loadHistoryList();
-//                }
-//            }
-//        });
-
+    public static Context getMainContext(){
+        return mainContext;
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.telephony.SmsManager;
 import java.util.ArrayList;
 
 import penguin.diabetes.R;
+import penguin.diabetes.activities.MainActivity;
 import penguin.diabetes.db.DataBaseManager;
 
 public class EmergencyContact {
@@ -43,6 +44,7 @@ public class EmergencyContact {
                     this.getPhone()  + ");"
             );
         }
+        cursor.close();
     }
 
     public EmergencyContact getFromDB(){
@@ -54,29 +56,29 @@ public class EmergencyContact {
             contact.setMinimumMeasureDangerZone(cursor.getString(cursor.getColumnIndex("min")));
             contact.setMaximumMeasureDangerZone(cursor.getString(cursor.getColumnIndex("max")));
             contact.setPhone(cursor.getString(cursor.getColumnIndex("phone")));
+            cursor.close();
             return contact;
-        }else return null;      // if Database don't have a emergency contact, it return null
+        }else{
+            cursor.close();
+            return null;      // if Database don't have a emergency contact, it return null
+        }
+
     }
 
     public static void sendMessageToEmergencyContact(int measureValue){
         SmsManager smsManager = SmsManager.getDefault();
         EmergencyContact contact = EmergencyContact.getInstance().getFromDB();
         // SMS message needs to be divided in parts of 160 characters max
-        ArrayList<String> message = new ArrayList<>();
-//        message.add("Você está cadastrado como contato de emergência de uma pessoa que possui diabetes.\n");
-//        message.add( "Sua última medida de glicemia foi de " + measureValue + ".\n");
-//        message.add("Talvez ela precise de cuidados médicos, mantenha-se alerta!");
+        ArrayList<String> message;
 
-        String str = "Você está cadastrado como contato de emergência de uma pessoa que possui diabetes.\n\n" +
-                           "Sua última medida de glicemia foi de " + measureValue + " mg/dL.\n\n" +
-                           "Talvez ela precise de cuidados médicos, MANTENHA-SE ALERTA!";
+        String str = MainActivity.getMainContext().getString(R.string.sms_message_pt1) +
+            measureValue + MainActivity.getMainContext().getString(R.string.sms_message_pt2);
 
         message = smsManager.divideMessage(str);
 
         if(contact != null) {
-            smsManager.sendMultipartTextMessage("+55" + contact.getPhone(), null,message, null,null);
-//            smsManager.sendTextMessage("+55" + contact.getPhone(), null, "message", null, null);
-
+            // TODO/FIXME: check if it works with no country prefix
+            smsManager.sendMultipartTextMessage(contact.getPhone(), null,message, null,null);
         }
     }
 

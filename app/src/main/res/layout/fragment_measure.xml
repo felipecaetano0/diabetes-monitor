@@ -24,6 +24,8 @@
                 android:id="@+id/fabSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:clickable="true"
                 android:focusable="true"
@@ -51,8 +53,8 @@
                 android:id="@+id/tvHumor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="116dp"
-                android:text="@string/med_humor"
+                android:layout_marginTop="60dp"
+                android:text="@string/measure_mood"
                 android:textSize="@dimen/med_text_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.495"
@@ -63,12 +65,13 @@
                 android:id="@+id/tvHumorRatting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/med_humor_rating3"
+                android:text="@string/measure_mood_rating3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.495"
+                app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rbHumor" />
+                app:layout_constraintTop_toBottomOf="@+id/rbHumor"
+                app:layout_constraintVertical_bias="0.089" />
 
             <Button
                 android:id="@+id/btHour"
@@ -90,7 +93,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="88dp"
                 android:layout_marginTop="88dp"
-                android:text="@string/med_hora"
+                android:text="@string/measure_time"
                 android:textSize="@dimen/med_text_size"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDate" />
@@ -101,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="88dp"
                 android:layout_marginTop="88dp"
-                android:text="@string/med_data"
+                android:text="@string/measure_date"
                 android:textSize="@dimen/med_text_size"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -125,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="76dp"
                 android:layout_marginTop="88dp"
-                android:text="@string/med_leitura"
+                android:text="@string/measure_value"
                 android:textSize="@dimen/med_text_size"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvHour" />
@@ -145,6 +148,7 @@
                 android:id="@+id/fabMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
                 android:layout_marginBottom="16dp"
                 android:clickable="true"
                 android:src="@android:drawable/stat_notify_chat"
@@ -152,7 +156,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.05"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvHumorRatting" />
+                app:layout_constraintTop_toTopOf="@+id/fabSave" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

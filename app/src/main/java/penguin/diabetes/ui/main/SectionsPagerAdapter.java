@@ -19,7 +19,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
     // Adicionar tabs/Add tab:
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2, R.string.tab_text_3};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_measure, R.string.tab_history, R.string.tab_graph};
     private final Context mContext;
 
     public SectionsPagerAdapter(Context context, FragmentManager fm) {

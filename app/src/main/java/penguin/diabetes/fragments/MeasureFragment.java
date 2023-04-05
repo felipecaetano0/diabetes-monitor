@@ -131,7 +131,7 @@ public class MeasureFragment extends Fragment {
         @Override
         public void onClick(View view) {
             if(measureAdapter.getMeasure() == -1){
-                Snackbar.make(view, R.string.med_invalid_value, Snackbar.LENGTH_LONG)
+                Snackbar.make(view, R.string.measure_invalid_value, Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }else{
                 boolean fail = false;
@@ -141,7 +141,7 @@ public class MeasureFragment extends Fragment {
                         EmergencyContact.sendMessageToEmergencyContact(measure.getMeasure());
                     } catch (Exception e){
                         e.printStackTrace();
-                        Snackbar.make(view, R.string.med_permission_denied, Snackbar.LENGTH_LONG)
+                        Snackbar.make(view, R.string.measure_permission_denied, Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                     }
                 }
@@ -150,7 +150,7 @@ public class MeasureFragment extends Fragment {
                 }catch (Exception e){
                     e.printStackTrace();
                     fail = true;
-                    Snackbar.make(view, R.string.med_save_fail_db, Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, R.string.measure_save_fail_db, Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
                 try{
@@ -158,12 +158,12 @@ public class MeasureFragment extends Fragment {
                 }catch (Exception e){
                     e.printStackTrace();
                     fail = true;
-                    Snackbar.make(view, R.string.med_save_fail_history, Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, R.string.measure_save_fail_history, Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
 
                 if(!fail) {
-                    Snackbar.make(view, R.string.med_save_success, Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, R.string.measure_save_success, Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
 

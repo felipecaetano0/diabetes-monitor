@@ -118,8 +118,6 @@ public class HistoryFragment extends Fragment {
 
         rvHistory.setAdapter(historyAdapter);
 
-//        Snackbar.make( root , "Loading history method called\nDB item count: " + historyAdapter.getItemCount(), Snackbar.LENGTH_LONG)
-//                .setAction("Action", null).show();
     }
 
     public static void refresh(){
