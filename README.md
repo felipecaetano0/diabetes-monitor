@@ -4,14 +4,14 @@ This App aims to help people who have diabetes track their glycemic index and al
 
 The code is currently in early stages of development and some features are still beeing conceived and implemented.
 
-What is currently implemented and working:
+## What is currently implemented and working:
 * Store a measure
 * Access the measure history
 * A graph is ploted with the measures
 * Add a contact phone that will receive a message in case of anormal measures
 * Support to two languages: portuguese and english 
 
-What we want to implement in the future:
+## What we want to implement in the future:
 * Saving and loading the history via a text file
 * Create a pdf file with the history
 * Share the history with other apps (Google Drive, Whatsapp, Messages)
