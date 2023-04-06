@@ -26,6 +26,11 @@
     <string name="history_date"> - Data: </string>
     <string name="history_time"> - Hora: </string>
     <string name="history_humor"> - Humor: </string>
+    <string name="history_bt_save">Salvar histórico</string>
+    <string name="history_bt_share">Compartilhar</string>
+    <string name="history_toast_indicating_folder_to_save">Salvo na pasta Download</string>
+    <string name="history_toast_saving_failure">Ocorreu um erro ao salvar o arquivo, por favor tente novamente</string>
+
 
     <!--    Graph Fragment     -->
     <string name="graph_filter">Filtros</string>

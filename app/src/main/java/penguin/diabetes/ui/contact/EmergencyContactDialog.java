@@ -1,17 +1,19 @@
 package penguin.diabetes.ui.contact;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-
-import com.google.android.material.snackbar.Snackbar;
+import androidx.core.app.ActivityCompat;
 
 import penguin.diabetes.R;
-import penguin.diabetes.db.DataBaseManager;
+import penguin.diabetes.activities.MainActivity;
 import penguin.diabetes.ui.measure.MeasureAdapter;
 
 public class EmergencyContactDialog extends Dialog{
@@ -60,8 +62,8 @@ public class EmergencyContactDialog extends Dialog{
         if ( (lowerGlucoseThreshold.compareTo("") == 0) ||
              (upperGlucoseThreshold.compareTo("") == 0) ||
              (phone.compareTo("") == 0) ){
-            Snackbar.make(getWindow().getDecorView(), R.string.tdm_null_input, Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            Toast.makeText(MainActivity.getMainContext(), R.string.tdm_null_input,
+                    Toast.LENGTH_LONG).show();
         }else{
             EmergencyContact contact = EmergencyContact.getInstance();
             contact.setPhone(phone);
@@ -70,14 +72,18 @@ public class EmergencyContactDialog extends Dialog{
 
             MeasureAdapter.setMaximumMeasureDangerZone(contact.getMaximumMeasureDangerZone());
             MeasureAdapter.setMinimumMeasureDangerZone(contact.getMinimumMeasureDangerZone());
+
+            // -------------------- SMS Permission request ---------------------------
+            ActivityCompat.requestPermissions((Activity) MainActivity.getMainContext(),new String[]{Manifest.permission.SEND_SMS},1);
+
             try {
                 contact.updateDB();
-                Snackbar.make(getWindow().getDecorView(), R.string.tdm_add_contact_success, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(MainActivity.getMainContext(), R.string.tdm_add_contact_success,
+                        Toast.LENGTH_LONG).show();
             } catch (Exception e) {
                 e.printStackTrace();
-                Snackbar.make(getWindow().getDecorView(), R.string.tdm_add_contact_fail, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(MainActivity.getMainContext(), R.string.tdm_add_contact_fail,
+                        Toast.LENGTH_LONG).show();
             }
         }
     }

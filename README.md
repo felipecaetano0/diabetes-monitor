@@ -10,9 +10,11 @@ The code is currently in early stages of development and some features are still
 * A graph is ploted with the measures
 * Add a contact phone that will receive a message in case of anormal measures
 * Support to two languages: portuguese and english 
+* Saving the history via a text file
+
 
 ## What we want to implement in the future:
-* Saving and loading the history via a text file
+* loading the history via a text file
 * Create a pdf file with the history
 * Share the history with other apps (Google Drive, Whatsapp, Messages)
 * Filter some measures by date
@@ -21,3 +23,6 @@ The code is currently in early stages of development and some features are still
 * Add and menage more than one emergency contact. (Add, delete and edit the emergency contacts)
 * Automatically read and store the blood sugar measure from a Bluetooth blood glucose meter
 
+
+Icon: https://www.flaticon.com/free-icons/medicine - Medicine icons created by max.icons - Flaticon
+by max.icons, checkout his works on: https://www.flaticon.com/authors/maxicons
