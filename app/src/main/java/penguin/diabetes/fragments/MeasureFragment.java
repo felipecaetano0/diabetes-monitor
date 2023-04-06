@@ -13,11 +13,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
 import penguin.diabetes.R;
+import penguin.diabetes.activities.MainActivity;
 import penguin.diabetes.db.DataBaseManager;
 import penguin.diabetes.ui.contact.EmergencyContact;
 import penguin.diabetes.ui.contact.EmergencyContactDialog;
@@ -131,8 +132,8 @@ public class MeasureFragment extends Fragment {
         @Override
         public void onClick(View view) {
             if(measureAdapter.getMeasure() == -1){
-                Snackbar.make(view, R.string.measure_invalid_value, Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(MainActivity.getMainContext(), R.string.measure_invalid_value,
+                        Toast.LENGTH_LONG).show();
             }else{
                 boolean fail = false;
                 measure = new Measure(datePickerAdapter, timePickerAdapter, measureAdapter, humorAdapter);
@@ -141,8 +142,8 @@ public class MeasureFragment extends Fragment {
                         EmergencyContact.sendMessageToEmergencyContact(measure.getMeasure());
                     } catch (Exception e){
                         e.printStackTrace();
-                        Snackbar.make(view, R.string.measure_permission_denied, Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
+                        Toast.makeText(MainActivity.getMainContext(), R.string.measure_permission_denied,
+                                Toast.LENGTH_LONG).show();
                     }
                 }
                 try{
@@ -150,21 +151,21 @@ public class MeasureFragment extends Fragment {
                 }catch (Exception e){
                     e.printStackTrace();
                     fail = true;
-                    Snackbar.make(view, R.string.measure_save_fail_db, Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    Toast.makeText(MainActivity.getMainContext(), R.string.measure_save_fail_db,
+                            Toast.LENGTH_LONG).show();
                 }
                 try{
                     HistoryFragment.refresh();
                 }catch (Exception e){
                     e.printStackTrace();
                     fail = true;
-                    Snackbar.make(view, R.string.measure_save_fail_history, Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    Toast.makeText(MainActivity.getMainContext(), R.string.measure_save_fail_history,
+                            Toast.LENGTH_LONG).show();
                 }
 
                 if(!fail) {
-                    Snackbar.make(view, R.string.measure_save_success, Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    Toast.makeText(MainActivity.getMainContext(), R.string.measure_save_success,
+                            Toast.LENGTH_LONG).show();
                 }
 
             }

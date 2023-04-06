@@ -1,17 +1,14 @@
 package penguin.diabetes.ui.measure;
 
-import android.Manifest;
 import android.graphics.Color;
-import android.telephony.SmsManager;
+
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
-
-import androidx.core.app.ActivityCompat;
-
-import com.google.android.material.snackbar.Snackbar;
+import android.widget.Toast;
 
 import penguin.diabetes.R;
+import penguin.diabetes.activities.MainActivity;
 import penguin.diabetes.ui.contact.EmergencyContact;
 
 public class MeasureAdapter implements View.OnKeyListener {
@@ -48,8 +45,8 @@ public class MeasureAdapter implements View.OnKeyListener {
 
     public int getMeasure() {
         if(this.view.getText().toString().equals("")){
-            Snackbar.make(view, R.string.measure_invalid_value, Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show();
+            Toast.makeText(MainActivity.getMainContext(), R.string.measure_invalid_value,
+                    Toast.LENGTH_LONG).show();
             return -1;
         }else {
             this.measure = Integer.parseInt(this.view.getText().toString());

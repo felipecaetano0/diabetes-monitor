@@ -26,6 +26,10 @@
     <string name="history_date"> - Date: </string>
     <string name="history_time"> - Time: </string>
     <string name="history_humor"> - Mood: </string>
+    <string name="history_bt_save">Save history</string>
+    <string name="history_bt_share">Share</string>
+    <string name="history_toast_indicating_folder_to_save">Saved on Download folder</string>
+    <string name="history_toast_saving_failure">An error occurred while saving the file, please try again</string>
 
     <!--    Graph Fragment     -->
     <string name="graph_filter">Filters</string>

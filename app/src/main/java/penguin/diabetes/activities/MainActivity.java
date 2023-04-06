@@ -4,16 +4,10 @@ import android.Manifest;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import android.os.Bundle;
 
-
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 
 import penguin.diabetes.R;
@@ -50,10 +45,6 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
 
-        // -------------------- SMS Permission request ---------------------------
-        // TODO: move this request to when you enter the emergency contact phone
-        ActivityCompat.requestPermissions(this ,new String[]{Manifest.permission.SEND_SMS},1);
-
         // -------------------- Data Base Initialization ------------------------
 
         SQLiteDatabase appDatabase = openOrCreateDatabase("Diabetes Monitor", MODE_PRIVATE,null);
@@ -81,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.tdm_reload:
                 try {
                     HistoryFragment.refresh();
-                    Snackbar.make(binding.getRoot(), R.string.tdm_reloading, Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    Toast.makeText(MainActivity.getMainContext(), R.string.tdm_reloading,
+                            Toast.LENGTH_LONG).show();
                 } catch (Exception e){
                     e.printStackTrace();
-                    Snackbar.make(binding.getRoot(), R.string.tdm_reloading_fail, Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                    Toast.makeText(MainActivity.getMainContext(), R.string.tdm_reloading_fail,
+                            Toast.LENGTH_LONG).show();
                 }
                 return true;
             case R.id.tdm_add_contact:

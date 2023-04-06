@@ -10,12 +10,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 
 import java.util.LinkedList;
 
 import penguin.diabetes.R;
 import penguin.diabetes.db.DataBaseManager;
+import penguin.diabetes.ui.history.SaveHistory;
 import penguin.diabetes.ui.layoutAdapter.HistoryAdapter;
 import penguin.diabetes.ui.measure.Measure;
 
@@ -80,6 +82,11 @@ public class HistoryFragment extends Fragment {
         rvHistory = root.findViewById(R.id.rvHistory);
         loadHistoryList();
 
+        // -- Setting up button listeners
+        Button btSaveHistory = (Button) root.findViewById(R.id.bt_save_history);
+        Button btShare = (Button) root.findViewById(R.id.bt_share_history);
+
+        btSaveHistory.setOnClickListener(new SaveHistory());
         return root;
     }
 
